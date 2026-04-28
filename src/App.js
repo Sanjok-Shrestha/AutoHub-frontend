@@ -1,12 +1,15 @@
-import PartsPage from "./pages/PartsPage";
-import SalesPage from "./pages/SalesPage";
+import { useState } from "react";
+import VendorPage from "./pages/VendorPage";
+import StaffPage from "./pages/StaffPage";
 
 function App() {
+  const [page, setPage] = useState("vendor");
+
   return (
-    <div>
-      <PartsPage />
-      <SalesPage />
-    </div>
+    <>
+      {page === "vendor" && <VendorPage setPage={setPage} />}
+      {page === "staff" && <StaffPage setPage={setPage} />}
+    </>
   );
 }
 
